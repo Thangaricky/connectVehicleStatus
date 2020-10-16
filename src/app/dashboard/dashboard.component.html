@@ -1,0 +1,28 @@
+<table style="width:100%">
+    <tr>
+      <th>Company</th>
+      <th>Address</th>
+      <th>VIN</th>
+      <th>Registration Number</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+        <th><input (keyup)="filterCompany($event)"/></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th><input (keyup)="filterStatus($event)"/></th>
+      </tr>
+    <ng-container *ngFor= "let company of data">
+        <ng-container *ngFor= "let vehicle of company.vehicle_list">
+        <tr>
+            <td>{{company.company_name}}</td>
+            <td>{{company.address}}</td>
+            <td>{{vehicle.VIN}}</td>
+            <td>{{vehicle.reg_no}}</td>
+            <td>{{vehicle.status}}</td>
+          </tr>
+        </ng-container>
+    </ng-container>
+
+  </table>
